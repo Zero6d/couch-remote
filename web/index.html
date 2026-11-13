@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f1117" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Couch" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Couch Remote</title>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <span class="dot" id="dot"></span>
+      <span id="host">Connecting…</span>
+    </div>
+    <button class="icon-btn" id="rescan" title="Rescan library">↻</button>
+  </header>
+
+  <section id="now" class="now hidden">
+    <div class="now-label">Running now</div>
+    <div id="now-list"></div>
+  </section>
+
+  <section id="library" class="grid"></section>
+
+  <section class="power">
+    <button class="power-btn" data-action="sleep">Sleep PC</button>
+    <button class="power-btn danger" data-action="shutdown">Shut down</button>
+  </section>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <div id="confirm" class="modal hidden">
+    <div class="modal-card">
+      <p id="confirm-text"></p>
+      <div class="modal-actions">
+        <button id="confirm-no">Cancel</button>
+        <button id="confirm-yes" class="danger">Yes</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="pair" class="modal hidden">
+    <div class="modal-card">
+      <p>Not paired with a PC. Open the link from the QR code printed by <code>npm run pair</code> on the gaming PC.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
